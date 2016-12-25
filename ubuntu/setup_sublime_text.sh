@@ -42,9 +42,12 @@ if [ -z `which subl | grep subl` ]; then
         fi
     fi
 
-    git clone https://github.com/lyfeyaj/sublime-text-imfix.git
-    cd sublime-text-imfix && ./sublime-imfix
-    cd ../ && rm -rf sublime-text-imfix
+    if which git
+    then
+        git clone https://github.com/lyfeyaj/sublime-text-imfix.git
+        cd sublime-text-imfix && ./sublime-imfix
+        cd ../ && rm -rf sublime-text-imfix
+    fi
 else
     echo "sublime_text has installed."
 fi
