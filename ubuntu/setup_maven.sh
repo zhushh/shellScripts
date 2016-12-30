@@ -3,6 +3,11 @@
 source_file=$2
 source_directory=apache-maven-3.3.9
 
+if [ -z `echo $JAVA_HOME` ]; then
+    echo "Please install java and setup environment JAVA_HOME firstly."
+    exit 0
+fi
+
 if which mvn | grep mvn
 then
     echo "Maven has installed."
